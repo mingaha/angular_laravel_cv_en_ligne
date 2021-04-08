@@ -1,0 +1,150 @@
+<div class="flex">
+    <div class="bg-gray-200 w-1/2 h-screen bg-cover bg-no-repeat bg-center"
+        style="background-image: url(./assets/images/bgCouverture4.jpg)">
+        <div>
+            <img (click)="GoToConnexion()" src="./assets/images/return.png"
+                class="w-12 h-12 ml-2 mt-2 transform hover:scale-110 motion-reduce:transform-none">
+        </div>
+
+    </div>
+    <div class=" w-1/2">
+
+        <!--Formulaire-->
+
+        <!--Image-->
+        <div class="h-auto w-full">
+            <form action="" method="POST">
+                <div class="w-full h-auto">
+                    <img class="mt-1 w-32 h-32 object-cover rounded-full bg-gray-500 mx-auto shadow-lg" src="">
+                    <img class="transform -translate-y-8 translate-x-10 w-8 h-8 mx-auto" src="./assets/images/camera.png">
+                </div>
+
+                <!--Nom et Prenom-->
+                <div class="flex">
+
+                    <!--Nom-->
+
+                    <div
+                        class="border-l-4 border-red-500 hover:border-blue-600 flex w-2/6  shadow-lg mx-auto mt- transform hover:scale-110 motion-reduce:transform-none">
+                        <div class="w-full">
+                            <div class="relative">
+                                <input
+                                    class=" border-0  bg-transparent appearance-none block focus:outline-none text-gray-600 px-2 min-w-full py-4"
+                                    name="nom" type="text" placeholder="Nom">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Prenom-->
+
+                    <div
+                        class="border-l-4 border-red-500 hover:border-blue-600 flex w-2/6  shadow-lg mx-auto mt-6 transform hover:scale-110 motion-reduce:transform-none">
+                        <div class="w-full">
+                            <div class="relative">
+                                <input
+                                    class=" border-0  bg-transparent appearance-none block focus:outline-none text-gray-600 px-2 min-w-full py-4"
+                                    name="prenom" type="text" placeholder="Prenom">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Email et Numero-->
+
+                <div class="flex">
+
+                    <!--Email-->
+
+                    <div
+                        class="border-l-4 border-red-500   hover:border-blue-600 flex w-2/6  mt-6 shadow-lg mx-auto transform hover:scale-110 motion-reduce:transform-none">
+
+                        <div class="w-full">
+                            <div class="relative">
+                                <input
+                                    class=" border-0 bg-transparent appearance-none  focus:outline-none text-gray-600 px-2 min-w-full py-4"
+                                    name="login" type="text" id="login" placeholder="iuc@gmail.com">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Numero-->
+
+                    <div
+                        class="border-l-4 border-red-500 hover:border-blue-600 flex w-2/6  shadow-lg mx-auto mt-6 transform hover:scale-110 motion-reduce:transform-none">
+                        <div class="w-full">
+                            <div class="relative">
+                                <input
+                                    class=" border-0  bg-transparent appearance-none block focus:outline-none text-gray-600 px-2 min-w-full py-4"
+                                    name="Numero" type="text" placeholder="Numero">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Password et Confirme password-->
+
+                <div class="flex">
+
+                    <!--Password-->
+
+                    <div
+                        class="border-l-4 border-red-500 hover:border-blue-600 flex w-2/6  shadow-lg mx-auto mt-6 transform hover:scale-110 motion-reduce:transform-none">
+                        <div class="w-full">
+                            <div class="relative">
+                                <input
+                                    class=" border-0  bg-transparent appearance-none block focus:outline-none text-gray-600 px-2 min-w-full py-4"
+                                    name="motDePasse" type="text" placeholder="mot de passe">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Confirme Password-->
+                    <div
+                        class="border-l-4 border-red-500 hover:border-blue-600 flex w-2/6  shadow-lg mx-auto mt-6 transform hover:scale-110 motion-reduce:transform-none">
+                        <div class="w-full">
+                            <div class="relative">
+                                <input
+                                    class=" border-0  bg-transparent appearance-none block focus:outline-none text-gray-600 px-2 min-w-full py-4"
+                                    name="confirmMDP" type="text" placeholder="Confirmer mot de passe">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!--Description-->
+
+                <div class="h-auto w-5/6 mx-auto">
+                    <div class="flex flex-col border-l-4 border-red-500 hover:border-blue-600  w-full  shadow-lg mx-auto mt-6 transform hover:scale-110 motion-reduce:transform-none">
+                        <textarea type="text"
+                            class="h-32 border-0 px-4 py-2 focus:ring-gray-500 focus:border-gray-900 w-full sm:text-sm border-gray-300 focus:outline-none text-gray-600 appearance-none  bg-transparent block  min-w-full "
+                            placeholder="Description..."></textarea>
+                    </div>
+                </div>
+
+                <!--ajouter Fichier-->
+                <div class="w-5/6 mx-auto h-auto ">
+                    <div >
+                        <input class="mt-6 " type="file" id="avatar" name="avatar" accept=".pdf">
+                    </div>
+                </div>
+
+                <!--button valider-->
+                <div>
+                    <div class="flex mt-6 ">
+                        <div class="mx-auto transform hover:scale-110 motion-reduce:transform-none">
+                            <input type="submit"
+                                class="h-12  rounded-full text-sm text-white  hover:bg-red-500 shadow-lg w-48 text-center font-bold bg-blue-600"
+                                name="submit" value="Inscription" />
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--Formulaire-->
+<div class="h-auto w-full bg-red-700">
+
+</div>
