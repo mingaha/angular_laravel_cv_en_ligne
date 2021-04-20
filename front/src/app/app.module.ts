@@ -13,6 +13,7 @@ import { NavBarComponent } from './CvTech/nav-bar/nav-bar.component';
 import { AnnonceJobComponent } from './CvTech/annonce-job/annonce-job.component';
 import { CvComponent } from './CvTech/cv/cv.component';
 import { PosterAnnonceComponent } from './CvTech/poster-annonce/poster-annonce.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { PosterAnnonceComponent } from './CvTech/poster-annonce/poster-annonce.c
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    HttpClientModule,
     ROUTING
   ],
   providers: [],

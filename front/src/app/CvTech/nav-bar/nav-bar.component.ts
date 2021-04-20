@@ -12,7 +12,12 @@ export class NavBarComponent implements OnInit {
 
   constructor(private router : Router) { }
 
-  ngOnInit(): void {
+  loggedIn =false;
+  ngOnInit(){
+    this.loggedIn=localStorage.getItem('token')!==null;
+  }
+  logout(){
+    localStorage.removeItem('token');
   }
 
   @HostListener("document:scroll")

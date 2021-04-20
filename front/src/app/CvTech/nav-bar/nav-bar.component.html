@@ -6,22 +6,24 @@
             </div>
             <div class="hidden sm:block sm:ml-6">
                 <div class="flex space-x-3  " style="margin-left: 800px;">
-                    
-                    <a [routerLink]="['']" routerLinkActive="active"
-                        class="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-semibold">Acceuil</a>
 
-                    <a [routerLink]="['Cv']" routerLinkActive="active"
-                        class="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-semibold ">CV</a>
+                    <a [routerLink]="['']" routerLinkActive="active" class="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-semibold">Acceuil</a>
+
+                    <a [routerLink]="['Cv']" routerLinkActive="active" class="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-md font-semibold ">CV</a>
 
                     <div class="group inline-block ">
-                        <button
-                            class="rounded-md hover:bg-gray-700 outline-none focus:outline-none text-white w-40  py-2 flex items-center ">
+                        <button class="rounded-md hover:bg-gray-700 outline-none focus:outline-none text-white w-40  py-2 flex items-center ">
                             <span class="pr-1 font-semibold flex-1"><a [routerLink]="['Annonce']" >Offres d'emploi</a></span>
                         </button>
                     </div>
-                    <a [routerLink]="['connexion']" routerLinkActive="active"
-                        class="text-white  py-2 rounded-md text-md font-semibold w-6 h-6 " >
-                        <img class="" src="./assets/images/user.png"/>
+                    <a routerLinkActive="active" *ngIf="!loggedIn" class="text-white  py-2 rounded-md text-md font-semibold w-6 h-6 ">
+                        <img class="" src="./assets/images/user.png" />
+                    </a>
+                    <a [routerLink]="['connexion']" routerLinkActive="active" *ngIf="!loggedIn" class="text-white  py-2 rounded-md text-md font-semibold w-6 h-6 ">
+                      login
+                </a>
+                    <a [routerLink]="['connexion']" routerLinkActive="active" *ngIf="loggedIn" (click)="logout()" class="text-white  py-2 rounded-md text-md font-semibold w-6 h-6 ">
+                          logout
                     </a>
                 </div>
             </div>
