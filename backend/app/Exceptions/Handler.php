@@ -2,7 +2,9 @@
 
 namespace App\Exceptions;
 
+use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Validation\ValidationException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -13,7 +15,12 @@ class Handler extends ExceptionHandler
      * @var array
      */
     protected $dontReport = [
-        //
+        \Illuminate\Auth\AuthenticationException::class,
+        \Illuminate\Auth\Access\AuthorizationException::class,
+        \Symfony\Component\HttpKernel\Exception\HttpException::class,
+        \Illuminate\Database\Eloquent\ModelNotFoundException::class,
+        \Illuminate\Session\TokenMismatchException::class,
+        \Illuminate\Validation\ValidationException::class,
     ];
 
     /**
@@ -38,4 +45,21 @@ class Handler extends ExceptionHandler
             //
         });
     }
+
+       /**
+      * Render the exception into an HTTP response.
+      *
+      * @param  \Illuminate\Http\Request  $request
+      * @param   \Execption   $exception
+      * @return \Illuminate\Http\Response
+      */
+    public function render($request, Throwable $exception)
+    {
+         if ($exception  instanceof ValidationException){
+              return response([
+                 'erros' =>$exception->errors()
+              ],400);
+          }
+         return response(['error'=>$exception->getMessage()],(int)$exception->getCode() ?: 400);
+     }
 }

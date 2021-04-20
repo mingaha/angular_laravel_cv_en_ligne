@@ -12,6 +12,9 @@ class VerifyCsrfToken extends Middleware
      * @var array
      */
     protected $except = [
-        //
+        '/*',
+        'sub.domain.zone' => [
+          'prefix/*'
+        ],
     ];
 }

@@ -14,6 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+Route::get('/',[App\Http\Controllers\UserController::class, 'index']);
+
+// Auth::routes();
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/user',[App\Http\Controllers\UserController::class, 'user'])->middleware('auth:api');
+
+Route::post('/register',[App\Http\Controllers\UserController::class, 'register']);
